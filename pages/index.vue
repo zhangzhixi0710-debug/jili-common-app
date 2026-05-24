@@ -56,11 +56,11 @@ export default {
         height: 60px;
 
         .header-left-img {
-            width: 40px;
+            width: 35px;
         }
 
         .header-right-img {
-            width: 40px;
+            width: 35px;
             margin-left: 0 !important;
         }
 
