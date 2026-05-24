@@ -1,0 +1,58 @@
+// 颜色变量
+$primary-color: #1989fa;
+$success-color: #07c160;
+$warning-color: #ff976a;
+$danger-color: #ee0a24;
+$text-color: #323233;
+$text-color-light: #969799;
+$background-color: #f7f8fa;
+$white: #ffffff;
+
+// 字体大小
+$font-size-xs: 20px;
+$font-size-sm: 24px;
+$font-size-md: 28px;
+$font-size-lg: 32px;
+$font-size-xl: 36px;
+
+// 间距
+$spacing-xs: 10px;
+$spacing-sm: 20px;
+$spacing-md: 30px;
+$spacing-lg: 40px;
+$spacing-xl: 50px;
+
+// 边框
+$border-color: #ebedf0;
+$border-radius: 4px;
+
+// 阴影
+$box-shadow: 0 2px 12px rgba(100, 101, 102, 0.12);
+
+// 断点
+$breakpoint-sm: 576px;
+$breakpoint-md: 740px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// 混合器
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin multi-ellipsis($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+// 如有需要，可在PC端下用.norem作用域覆盖px变量 

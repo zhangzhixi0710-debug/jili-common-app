@@ -1,0 +1,119 @@
+// 寮曞叆鍝嶅簲寮忔牱寮?
+@import'./responsive.scss';
+
+.main::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+}
+
+.custom-large-date-picker {
+    width: 400px !important;
+}
+
+.custom-large-date-picker-landscape {
+    top: 430px !important;
+    left: 30px !important;
+}
+
+.custom-large-date-picker .el-picker-panel__icon-btn {
+    display: none;
+}
+
+.custom-large-date-picker .el-picker-panel__content {
+    width: 360px !important;
+    margin: 16px;
+}
+
+.custom-large-date-picker {
+    line-height: 20px !important;
+}
+
+.custom-large-date-picker .el-date-table td div {
+    height: 40px;
+    padding: 3px 0;
+}
+
+.custom-large-date-picker .el-date-table td.current:not(.disabled) span {
+    background-color: #fcc40d !important;
+    color: #000 !important;
+}
+
+.custom-large-date-picker .el-date-table th {
+    color: #06c724 !important;
+    font-size: 18px;
+}
+.custom-large-date-picker .el-date-table td {
+    height: 20px !important;
+    width: 30px;
+    font-size: 16px !important;
+}
+.custom-large-date-picker .el-date-picker__header-label {
+    font-size: 20px;
+    font-weight: 700;
+}
+.custom-large-date-picker .el-date-picker__header-label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.custom-large-date-picker .el-date-table td.today span {
+    color: #fcc40d !important;
+}
+.custom-large-date-picker .el-year-table td .cell {
+    font-size: 20px;
+}
+
+.custom-large-date-picker .el-month-table td .cell {
+    font-size: 20px;
+}
+
+
+.swiper-container {
+    height: 100%;
+}
+
+.custom-large-date-picker .el-date-table td span {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+}
+/* 浣跨敤 /deep/ 鎴?>>> 绌块€?scoped 鏍峰紡 */
+.custom-checkbox /deep/ .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+.custom-checkbox /deep/ .el-checkbox__input .el-checkbox__inner {
+    width: 24px !important;
+    height: 24px !important;
+}
+.custom-checkbox /deep/ .el-checkbox__input.is-checked .el-checkbox__inner::after {
+    height: 12px !important;
+    width: 5px !important;
+    left: 9px !important;
+    top: 4px !important;
+    border-width: 4px !important;
+}
+
+.custom-checkbox /deep/ .el-checkbox__input + .el-checkbox__label {
+    color: #999 !important;
+    font-size: 24px !important;
+}
+.custom-checkbox {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.fullscreen-loading {
+    position: fixed; /* 浣跨敤鍥哄畾瀹氫綅 */
+    top: 0; /* 浠庨《閮ㄥ紑濮?*/
+    left: 0; /* 浠庡乏渚у紑濮?*/
+    width: 100%; /* 鍏ㄥ */
+    height: 100%; /* 鍏ㄩ珮 */
+    background-color: #000; /* 鑳屾櫙鍗婇€忔槑 */
+    display: flex; /* 浣跨敤 Flexbox */
+    justify-content: center; /* 姘村钩灞呬腑 */
+    align-items: center; /* 鍨傜洿灞呬腑 */
+    z-index: 9999; /* 纭繚鍦ㄦ渶涓婂眰 */
+    opacity: 0.5;
+}

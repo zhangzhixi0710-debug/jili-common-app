@@ -1,0 +1,292 @@
+import { jiliAsset } from '@/utils/assets';
+const WILD_ID = 8;
+
+export const buildSymbolImageUrl = (gameId, id) =>
+    id || id === 0 ? jiliAsset(`images/intro/${gameId}/symbol_${id}.webp`) : "";
+
+function uuid() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+        const r = (Math.random() * 16) | 0,
+            v = c === "x" ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+
+// ==========================================
+// 88条固定Paylines
+// ==========================================
+const PAYLINES = [
+    // Line 1
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 1 },
+        { col: 2, row: 1 },
+        { col: 3, row: 1 },
+        { col: 4, row: 1 },
+    ],
+    // Line 2
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 0 },
+        { col: 2, row: 0 },
+        { col: 3, row: 0 },
+        { col: 4, row: 0 },
+    ],
+    // Line 3
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 2 },
+        { col: 2, row: 2 },
+        { col: 3, row: 2 },
+        { col: 4, row: 2 },
+    ],
+    // Line 4
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 1 },
+        { col: 2, row: 2 },
+        { col: 3, row: 1 },
+        { col: 4, row: 0 },
+    ],
+    // Line 5
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 1 },
+        { col: 2, row: 0 },
+        { col: 3, row: 1 },
+        { col: 4, row: 2 },
+    ],
+    // Line 6
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 0 },
+        { col: 2, row: 1 },
+        { col: 3, row: 0 },
+        { col: 4, row: 0 },
+    ],
+    // Line 7
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 2 },
+        { col: 2, row: 1 },
+        { col: 3, row: 2 },
+        { col: 4, row: 2 },
+    ],
+    // Line 8
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 2 },
+        { col: 2, row: 2 },
+        { col: 3, row: 2 },
+        { col: 4, row: 1 },
+    ],
+    // Line 9
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 0 },
+        { col: 2, row: 0 },
+        { col: 3, row: 0 },
+        { col: 4, row: 1 },
+    ],
+    // Line 10
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 0 },
+        { col: 2, row: 1 },
+        { col: 3, row: 0 },
+        { col: 4, row: 1 },
+    ],
+    // Line 11
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 2 },
+        { col: 2, row: 1 },
+        { col: 3, row: 2 },
+        { col: 4, row: 1 },
+    ],
+    // Line 12
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 1 },
+        { col: 2, row: 0 },
+        { col: 3, row: 1 },
+        { col: 4, row: 0 },
+    ],
+    // Line 13
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 1 },
+        { col: 2, row: 2 },
+        { col: 3, row: 1 },
+        { col: 4, row: 2 },
+    ],
+    // Line 14
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 1 },
+        { col: 2, row: 0 },
+        { col: 3, row: 1 },
+        { col: 4, row: 1 },
+    ],
+    // Line 15
+    [
+        { col: 0, row: 1 },
+        { col: 1, row: 1 },
+        { col: 2, row: 2 },
+        { col: 3, row: 1 },
+        { col: 4, row: 1 },
+    ],
+    // Line 16
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 1 },
+        { col: 2, row: 1 },
+        { col: 3, row: 1 },
+        { col: 4, row: 0 },
+    ],
+    // Line 17
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 1 },
+        { col: 2, row: 1 },
+        { col: 3, row: 1 },
+        { col: 4, row: 2 },
+    ],
+    // Line 18
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 2 },
+        { col: 2, row: 0 },
+        { col: 3, row: 2 },
+        { col: 4, row: 0 },
+    ],
+    // Line 19
+    [
+        { col: 0, row: 2 },
+        { col: 1, row: 0 },
+        { col: 2, row: 2 },
+        { col: 3, row: 0 },
+        { col: 4, row: 2 },
+    ],
+    // Line 20
+    [
+        { col: 0, row: 0 },
+        { col: 1, row: 2 },
+        { col: 2, row: 2 },
+        { col: 3, row: 2 },
+        { col: 4, row: 0 },
+    ],
+];
+
+function getLineByIndex(index) {
+    return PAYLINES[index];
+}
+
+function generateHighlightListFromWinning(winningCells) {
+    const list = Array.from({ length: 5 }, () => []);
+    winningCells.forEach(c => list[c.col].push(c.row));
+    return list.map(arr => Array.from(new Set(arr)).sort((a, b) => a - b));
+}
+
+function generatePlateSymbolExtend(plateSymbol, gameId) {
+    return Array.from({ length: 5 }, (_, row) =>
+        Array.from({ length: 4 }, (_, col) =>
+            buildSymbolImageUrl(gameId, plateSymbol[row].Row[col])
+        )
+    );
+}
+
+// function generatePlateSymbolExtend(plateSymbol) {
+//     // 再映射成图片
+//     return plateSymbol.map(row => row.Row.map(sym => buildSymbolImageUrl[sym]));
+// }
+
+function sortByIndex(arr) {
+    return arr.sort((a, b) => a.Index - b.Index);
+}
+
+function validateLineOnPlate(plateSymbol, lineCells) {
+    const cellsWithId = lineCells.map(p => ({
+        col: p.col,
+        row: p.row,
+        symbolId: plateSymbol[p.col].Row[p.row],
+    }));
+    debugger
+    // 找到第一个非 WILD/SCATTER 符号作为目标符号
+    const targetCell = cellsWithId.find(c => c.symbolId !== WILD_ID);
+    const targetId = targetCell ? targetCell.symbolId : WILD_ID;
+
+    let count = 0;
+    const matchedCells = [];
+
+    for (let i = 0; i < cellsWithId.length; i++) {
+        const c = cellsWithId[i];
+        if (c.symbolId === targetId || c.symbolId === WILD_ID) {
+            matchedCells.push({ ...c });
+            count++;
+        } else {
+            // 遇到不匹配就中断，如果当前累计>=3，直接返回中奖
+            if (count >= 3) break;
+            count = 0;
+            matchedCells.length = 0;
+        }
+    }
+
+    return {
+        ok: matchedCells.length >= 3,
+        cells: matchedCells.length >= 3 ? matchedCells : [],
+    };
+}
+
+function processFreeQueue(gameData, gameId) {
+    const RoundQueue = gameData.RoundQueue || [];
+    const plates = RoundQueue.map((roundData, index) => {
+        let RoundWin = 0;
+
+        const PlateSymbol = roundData.PlateSymbol
+
+        const PlateSymbolExtend = generatePlateSymbolExtend(PlateSymbol, gameId);
+
+        const AwardDataVec = (roundData.AwardDataVec || []).map((award, idx) => {
+            const { Win, Symbol = 0, Line = 0 } = award;
+
+            RoundWin += Win || 0;
+
+            const line = getLineByIndex(Line);
+
+            const awardsDetail = line ? validateLineOnPlate(PlateSymbol, line).cells : [];
+
+            award.Line = Line + 1;
+
+            return {
+                ...award,
+                uuid: uuid(),
+                img: buildSymbolImageUrl(gameId, Symbol),
+                list: generateHighlightListFromWinning(awardsDetail),
+            };
+        });
+
+        return {
+            ...roundData,
+            uuid: uuid(),
+            PlateSymbolExtend,
+            RoundWin,
+            AwardDataVec: sortByIndex([...AwardDataVec]),
+        };
+    });
+
+    return plates;
+}
+
+// ==========================================
+// 最终处理函数
+// ==========================================
+export function processGameData(gameData, gameId) {
+    const rounds = processFreeQueue(gameData, gameId);
+
+    return {
+        ...gameData,
+        uuid: uuid(),
+        rounds,
+    };
+}

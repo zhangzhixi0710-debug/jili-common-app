@@ -1,0 +1,57 @@
+.header {
+    position: fixed;
+    height: 68px;
+    background-color: #24263a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    width: 100%;
+
+    --site-font-family-default: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
+        STHeitiTC-Light, "Microsoft JhengHei";
+    --site-font-family-th-TH: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
+        STHeitiTC-Light, "Microsoft JhengHei", "MN Kui Chai", sans-serif;
+    --site-font-family-my-MM: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
+        STHeitiTC-Light, "Microsoft JhengHei", Zawgyi-One, sans-serif;
+}
+
+.header-left-img {
+    width: 45px;
+    margin-left: 16px;
+}
+
+.header-right-img {
+    width: 45px;
+    margin-right: 20px;
+}
+
+.header-right {
+    line-height: 18px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 12px;
+
+    span {
+        font-size: 16px;
+        color: #7e7e7e;
+    }
+
+    span:last-child {
+        color: #fcc40d;
+        font-weight: 600;
+        letter-spacing: 0;
+        font-family: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light, STHeitiTC-Light,
+            "Microsoft JhengHei";
+    }
+}
+
+.header-title {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

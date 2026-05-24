@@ -1,0 +1,175 @@
+// 响应式断点定义
+$breakpoints: (
+    "xs": 320px,
+    // 超小屏幕
+    "sm": 576px,
+    // 小屏幕
+    "md": 768px,
+    // 中等屏幕
+    "lg": 992px,
+    // 大屏幕
+    "xl": 1200px,
+    // 超大屏幕
+    "xxl": 1920px // 超超大屏幕,
+);
+
+// 媒体查询混入
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "未知的断点: #{$breakpoint}";
+    }
+}
+
+// 移动端优先的媒体查询
+@mixin mobile-first($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+            @content;
+        }
+    } @else {
+        @warn "未知的断点: #{$breakpoint}";
+    }
+}
+
+// 设备类型检测
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+// 横屏和竖屏
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin portrait {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+// 高分辨率屏幕
+@mixin retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+// 通用响应式容器
+.responsive-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include mobile {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    @include tablet {
+        max-width: 750px;
+        padding: 0 20px;
+    }
+
+    @include desktop {
+        max-width: 1200px;
+        padding: 0 30px;
+    }
+}
+
+// 响应式字体大小
+.responsive-text {
+    font-size: 14px;
+
+    @include mobile {
+        font-size: 12px;
+    }
+
+    @include tablet {
+        font-size: 14px;
+    }
+
+    @include desktop {
+        font-size: 16px;
+    }
+}
+
+// 响应式间距
+.responsive-spacing {
+    margin: 10px;
+    padding: 10px;
+
+    @include mobile {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    @include tablet {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    @include desktop {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+// 隐藏/显示工具类
+.hide-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.hide-tablet {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    @include desktop {
+        display: none !important;
+    }
+}
+
+.show-mobile {
+    display: none !important;
+    @include mobile {
+        display: block !important;
+    }
+}
+
+.show-tablet {
+    display: none !important;
+    @include tablet {
+        display: block !important;
+    }
+}
+
+.show-desktop {
+    display: none !important;
+    @include desktop {
+        display: block !important;
+    }
+}

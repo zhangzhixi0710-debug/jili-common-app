@@ -1,0 +1,18 @@
+<svg data-v-200ff32c="" version="1.1" id="圖層_1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 265 265" xml:space="preserve" class="fill-current stroke-current w-6 portrait:w-5" stroke="#CEA661">
+	<style data-v-200ff32c="" type="text/css"> .st1{stroke-width:18;stroke-linecap:round;stroke-miterlimit:10;} </style>
+	<circle data-v-200ff32c="" cx="80.83" cy="83.5" r="61"></circle>
+	<path data-v-200ff32c="" d="M80.83,22.5c33.69,0,61,27.31,61,61s-27.31,61-61,61s-61-27.31-61-61S47.14,22.5,80.83,22.5"></path>
+	<g data-v-200ff32c="">
+		<g data-v-200ff32c="">
+			<path data-v-200ff32c="" d="M137.92,125.65c-12.94,17.49-33.71,28.85-57.09,28.85s-44.15-11.36-57.09-28.85
+			c-12.94,9.04-21.41,24.03-21.41,41.01v56.83c0,4.8,0.69,9.43,1.95,13.83c23.93,8.53,49.69,13.18,76.55,13.18
+			s52.62-4.66,76.55-13.18c1.26-4.39,1.95-9.03,1.95-13.83v-56.83C159.33,149.68,150.86,134.69,137.92,125.65z"></path>
+		</g>
+	</g>
+	<line data-v-200ff32c="" x1="165.67" y1="53.5" x2="254.67" y2="53.5" class="st1"></line>
+	<line data-v-200ff32c="" x1="165.67" y1="101.83" x2="254.67" y2="101.83" class="st1"></line>
+	<line data-v-200ff32c="" x1="190.94" y1="150.17" x2="254.67" y2="150.17" class="st1"></line>
+	<line data-v-200ff32c="" x1="190.94" y1="198.5" x2="254.67" y2="198.5" class="st1"></line>
+</svg>

@@ -1,0 +1,197 @@
+﻿// constants.js
+export const mapData = {
+    0: "9",
+    1: "10",
+    2: "J",
+    3: "Q",
+    4: "K",
+    5: "A",
+    6: "鹿",
+    7: "狼",
+    8: "熊",
+    9: "鹰",
+    10: "普通野牛",
+    11: "紫色野牛",
+    12: "金色野牛",
+    13: "WILD",
+    14: "SCATTER",
+    15: "紫色箭头",
+    16: "金额箭头",
+    17: "WILD *2",
+    18: "WILD *3",
+    19: "WILD *5",
+};
+
+export const eventTypeMap = [
+    { flag: 4, id: 3, name: "SUPER CHARGE金牛" },
+    { flag: 2, id: 2, name: "CHARGE紫牛" },
+    { flag: 32, id: 1, name: "8FREE GAME x3 x5" },
+];
+
+export const symbolIdToEventIdMap = {
+    1: 1,
+    11: 2, // 紫色野牛
+    12: 3, // 金色野牛
+};
+
+export const WILD_IDS = [13, 17, 18, 19];
+
+export const payTable = {
+    14: 3,
+    10: 2,
+    11: 2,
+    12: 2,
+    8: 3,
+    7: 3,
+    6: 3,
+    9: 3,
+    5: 3,
+    4: 3,
+    3: 3,
+    2: 3,
+    1: 3,
+    0: 3,
+};
+
+export const headerDefaultId = [4, 3, 4];
+
+export const SCATTER = 14;
+
+const EventImage = {
+    1: "event_free_game",
+    2: "event_charge",
+    3: "event_super_charge",
+    4: "door",
+};
+export const filterEventImageId = id => {
+    return `${EventImage[id]}.png`;
+};
+
+export const filterSymbolImageId = id => {
+    return `symbol_${id >= 10 ? id : '0'+ id}.png`;
+};
+
+export const gameNameMap = {
+    "002": { nameZh: "秦始皇", nameEn: "China Shi Huang" },
+    "004": { nameZh: "关云长", nameEn: "God Of Martial" },
+    "005": { nameZh: "火热辣椒", nameEn: "Hot Chilli" },
+    "006": { nameZh: "发财树", nameEn: "LuckyTree" },
+    "009": { nameZh: "舞龙争霸", nameEn: "War Of Dragons" },
+    "010": { nameZh: "宝石派对", nameEn: "Gem Party" },
+    "013": { nameZh: "球好运", nameEn: "Lucky Ball" },
+    "014": { nameZh: "超爆", nameEn: "Hyper Burst" },
+    "016": { nameZh: "丛林之王", nameEn: "Jungle King" },
+    "017": { nameZh: "上海甜心", nameEn: "Shanghai Beauty" },
+    "021": { nameZh: "极速发发发", nameEn: "Fa Fa Fa" },
+    "023": { nameZh: "糖果宝贝", nameEn: "Candy Baby" },
+    "026": { nameZh: "海岛甜心", nameEn: "Hawaii Beauty" },
+    "027": { nameZh: "极速777", nameEn: "SevenSevenSeven" },
+    "030": { nameZh: "人鱼甜心", nameEn: "Bubble Beauty Sweet Heart" },
+    "033": { nameZh: "极速猪来了", nameEn: "FortunrPig" },
+    "035": { nameZh: "疯狂777", nameEn: "Crazy777" },
+    "036": { nameZh: "包青天", nameEn: "Bao Boo Chin" },
+    "037": { nameZh: "夜上海", nameEn: "Night City" },
+    "038": { nameZh: "封神", nameEn: "Fengshen" },
+    "040": { nameZh: "疯狂一路发", nameEn: "Crazy Fa Fa Fa" },
+    "043": { nameZh: "喜洋洋", nameEn: "XiYang Yang" },
+    "044": { nameZh: "钻石派对", nameEn: "Diamond Party" },
+    "045": { nameZh: "疯狂抢金乐", nameEn: "Golden Bank" },
+    "047": { nameZh: "冲锋野牛", nameEn: "Charge Buffalo" },
+    "048": { nameZh: "霸金砖", nameEn: "Lucky Goldbricks" },
+    "049": { nameZh: "超级王牌", nameEn: "Super Ace" },
+    "051": { nameZh: "疯狂钱来也", nameEn: "Money Coming" },
+    "058": { nameZh: "黄金艳后", nameEn: "Golden Queen" },
+    "067": { nameZh: "猴子派对", nameEn: "Monkey Party" },
+    "076": { nameZh: "嗨翻夜", nameEn: "Party Night" },
+    "077": { nameZh: "拳王", nameEn: "Boxing King" },
+    "085": { nameZh: "法老秘宝", nameEn: "Pharaoh Treasure" },
+    "087": { nameZh: "黄金之书", nameEn: "Book Of Gold" },
+    "091": { nameZh: "象财神", nameEn: "Lucky Coming" },
+    100: { nameZh: "真有钱", nameEn: "Super Rich" },
+    101: { nameZh: "梅杜莎", nameEn: "Mddusa" },
+    102: { nameZh: "罗马X", nameEn: "RomaX" },
+    103: { nameZh: "黄金帝国", nameEn: "Golden Empire" },
+    106: { nameZh: "TWIN WINS", nameEn: "TWIN WINS" },
+    108: { nameZh: "阿拉丁", nameEn: "Magic Lamp" },
+    109: { nameZh: "迦罗宝石", nameEn: "Fortune Gems" },
+    110: { nameZh: "阿里巴巴", nameEn: "Ali Baba" },
+    115: { nameZh: "王牌特务", nameEn: "Agent Ace" },
+    116: { nameZh: "快乐计程车", nameEn: "Happ Taxi" },
+    126: { nameZh: "庆典之月", nameEn: "Bone Fortune" },
+    130: { nameZh: "雷神", nameEn: "ThorX" },
+    134: { nameZh: "无限王牌", nameEn: "Mega Ace" },
+    135: { nameZh: "玛雅帝国", nameEn: "Mayan Empire" },
+    136: { nameZh: "森巴嘉年华", nameEn: "Samba" },
+    137: { nameZh: "疯狂淘金", nameEn: "Gold Rush" },
+    142: { nameZh: "赏金猎人", nameEn: "Bonus Hunter" },
+    144: { nameZh: "吉利财神", nameEn: "Caishen" },
+    145: { nameZh: "招财猫", nameEn: "Neko Fortune" },
+    146: { nameZh: "世界杯", nameEn: "World Cup" },
+    164: { nameZh: "海盗女王", nameEn: "Pirate Queen" },
+    166: { nameZh: "极速狂飙", nameEn: "Wld Racer" },
+    171: { nameZh: "罪恶都市", nameEn: "SinCity" },
+    172: { nameZh: "爱尔兰精灵", nameEn: "ELF BINGO" },
+    176: { nameZh: "功夫虎", nameEn: "MasterTiger" },
+    180: { nameZh: "埃及遗产", nameEn: "Legacy Of Egypt" },
+    181: { nameZh: "百搭王牌", nameEn: "WildAce" },
+    183: { nameZh: "黄金小丑", nameEn: "Golden Joker" },
+    191: { nameZh: "黄金神庙", nameEn: "Golden Temple" },
+    193: { nameZh: "恶魔之火", nameEn: "Devil Fire" },
+    198: { nameZh: "糖果乐园", nameEn: "Sweet Land" },
+    208: { nameZh: "凤凰试炼", nameEn: "Phoenix" },
+    209: { nameZh: "帝国女祭司", nameEn: "Aztec Priestess" },
+    214: { nameZh: "亚瑟王", nameEn: "KingArthur" },
+    223: { nameZh: "伽罗宝石2", nameEn: "Fortune Gems 2" },
+    225: { nameZh: "Cricket King 18", nameEn: "Cricket King 18" },
+    226: { nameZh: "魔女之夜", nameEn: "Witches Night" },
+    228: { nameZh: "浴血战士", nameEn: "Arena Fighter" },
+    230: { nameZh: "Cricket Sah 75", nameEn: "Cricket Sah 75" },
+    238: { nameZh: "孟加拉甜心", nameEn: "Bangla Beauty" },
+    239: { nameZh: "猛警威龙", nameEn: "Dabanggg" },
+    240: { nameZh: "派对明星", nameEn: "Party Star" },
+    252: { nameZh: "宙斯", nameEn: "Zeus" },
+    258: { nameZh: "恶魔之火2", nameEn: "Devil Fire 2" },
+    259: { nameZh: "冲锋野牛Ascent", nameEn: "Buffalo Slot 2" },
+    264: { nameZh: "埃及之光", nameEn: "Egypt's Glow" },
+    299: { nameZh: "魔药巫师", nameEn: "Potion Wizard" },
+    300: { nameZh: "伽罗宝石3", nameEn: "Fortune Gems 3" },
+    301: { nameZh: "彩金小丑", nameEn: "JackPot Jocker" },
+    302: { nameZh: "疯狂钱来也-扩充押注", nameEn: "Money Coming Expanded Bets" },
+    303: { nameZh: "丛林派对", nameEn: "Fortune Monkey" },
+    307: { nameZh: "寻宝任务", nameEn: "Treasure Quest" },
+    324: { nameZh: "Nightfall Hunting", nameEn: "Nightfall Hunting" },
+    372: { nameZh: "三重瑞龙", nameEn: "3 Pot Dragons" },
+    374: { nameZh: "旺旺来", nameEn: "Lucky Doggy" },
+    375: { nameZh: "波塞冬", nameEn: "Poseidon" },
+    376: { nameZh: "幕府将军", nameEn: "Shogun" },
+    377: { nameZh: "狮王历险", nameEn: "Safari Mystery" },
+    378: { nameZh: "疯狂抢金乐-2", nameEn: "Golden Bank 2" },
+    379: { nameZh: "聚宝盆", nameEn: "Money Pot" },
+    392: { nameZh: "摇钱树", nameEn: "Goin Tree" },
+    399: { nameZh: "三币瑞龙", nameEn: "3 Coin Treasures" },
+    400: { nameZh: "幸运猪", nameEn: "3 Lucky Piggy" },
+    403: { nameZh: "超级王牌豪华版", nameEn: "Super Ace Deluxe" },
+    421: { nameZh: "幸运捷豹", nameEn: "Lucky Jaguar" },
+    422: { nameZh: "水果总汇", nameEn: "Fruit Wheel" },
+    458: { nameZh: "无限金币", nameEn: "Goin Infinity Surge Reel" },
+    "032": { nameZh: "彩金捕鱼", nameEn: "Jakpot Fishing" },
+    119: { nameZh: "全明星捕鱼", nameEn: "All Star Fishing" },
+    "020": { nameZh: "炸鱼来了", nameEn: "Bombing Fishing" },
+    "071": { nameZh: "夺宝传奇", nameEn: "Boom Legend" },
+    "006": { nameZh: "飞龙宝藏", nameEn: "Dragon Fortune" },
+    "042": { nameZh: "猎龙大亨", nameEn: "Dinosaur Tycoon" },
+    "021": { nameZh: "猎龙大亨 2", nameEn: "Dinosaur Tycoon II" },
+    464: { nameZh: "财神彩金", nameEn: "Fortune King Jackpot" },
+    "082": { nameZh: "开心捕鱼", nameEn: "Happy Fishing" },
+    "074": { nameZh: "王者捕鱼", nameEn: "Mega Fishing" },
+    289: { nameZh: "海王彩金", nameEn: "Ocean King Jackpot" },
+    "001": { nameZh: "钱龙捕鱼", nameEn: "Royal Fishing" },
+};
+
+export const GAME_NAME_PREFIX = 'i18_Game'
+
+export const SEARCH_DATA = [
+    { id: 15, timeKey: "i18_15MinutesAgo" },
+    { id: 30, timeKey: "i18_30MinutesAgo" },
+    { id: 60, timeKey: "i18_1HourAgo" },
+];

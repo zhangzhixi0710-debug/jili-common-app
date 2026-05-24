@@ -1,0 +1,119 @@
+// 引入响应式样式
+@import'./responsive.scss';
+
+.main::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+}
+
+.custom-large-date-picker {
+    width: 400px !important;
+}
+
+.custom-large-date-picker-landscape {
+    top: 430px !important;
+    left: 30px !important;
+}
+
+.custom-large-date-picker .el-picker-panel__icon-btn {
+    display: none;
+}
+
+.custom-large-date-picker .el-picker-panel__content {
+    width: 360px !important;
+    margin: 16px;
+}
+
+.custom-large-date-picker {
+    line-height: 20px !important;
+}
+
+.custom-large-date-picker .el-date-table td div {
+    height: 40px;
+    padding: 3px 0;
+}
+
+.custom-large-date-picker .el-date-table td.current:not(.disabled) span {
+    background-color: #fcc40d !important;
+    color: #000 !important;
+}
+
+.custom-large-date-picker .el-date-table th {
+    color: #06c724 !important;
+    font-size: 18px;
+}
+.custom-large-date-picker .el-date-table td {
+    height: 20px !important;
+    width: 30px;
+    font-size: 16px !important;
+}
+.custom-large-date-picker .el-date-picker__header-label {
+    font-size: 20px;
+    font-weight: 700;
+}
+.custom-large-date-picker .el-date-picker__header-label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.custom-large-date-picker .el-date-table td.today span {
+    color: #fcc40d !important;
+}
+.custom-large-date-picker .el-year-table td .cell {
+    font-size: 20px;
+}
+
+.custom-large-date-picker .el-month-table td .cell {
+    font-size: 20px;
+}
+
+
+.swiper-container {
+    height: 100%;
+}
+
+.custom-large-date-picker .el-date-table td span {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+}
+/* 使用 /deep/ 或 >>> 穿透 scoped 样式 */
+.custom-checkbox ::v-deep .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+.custom-checkbox ::v-deep .el-checkbox__input .el-checkbox__inner {
+    width: 24px !important;
+    height: 24px !important;
+}
+.custom-checkbox ::v-deep .el-checkbox__input.is-checked .el-checkbox__inner::after {
+    height: 12px !important;
+    width: 5px !important;
+    left: 9px !important;
+    top: 4px !important;
+    border-width: 4px !important;
+}
+
+.custom-checkbox ::v-deep .el-checkbox__input + .el-checkbox__label {
+    color: #999 !important;
+    font-size: 24px !important;
+}
+.custom-checkbox {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.fullscreen-loading {
+    position: fixed; /* 使用固定定位 */
+    top: 0; /* 从顶部开始 */
+    left: 0; /* 从左侧开始 */
+    width: 100%; /* 全宽 */
+    height: 100%; /* 全高 */
+    background-color: #000; /* 背景半透明 */
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    z-index: 9999; /* 确保在最上层 */
+    opacity: 0.5;
+}
