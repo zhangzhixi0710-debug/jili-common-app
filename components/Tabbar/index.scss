@@ -65,3 +65,27 @@
         filter: inherit !important;
     }
 }
+
+.tabbar-pc {
+    position: absolute;
+    bottom: inherit;
+    left: 0;
+    top: 82px;
+    right: inherit;
+    height: calc(100% - 82px);
+    width: 110px;
+    border-top-right-radius: 7px;
+
+    .tabbar-font {
+        font-size: 18px !important;
+    }
+
+    ::v-deep .van-tabbar-item__text {
+        margin-top: 10px;
+    }
+
+    .van-tabbar-item img {
+        width: 45px !important;
+        height: 45px;
+    }
+}

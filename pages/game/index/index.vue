@@ -1,5 +1,5 @@
 <template>
-    <div class="layout">
+    <div class="layout" :class="{ 'layout-pc': isPcMax }">
         <div v-if="isLoading" class="fullscreen-loading">
             <van-loading type="spinner" size="24px" vertical></van-loading>
         </div>
@@ -61,6 +61,7 @@ import { LayoutConfig } from "@/constants/layout.js";
 export default {
     name: "GameLayout",
     components: { Header, Tabbar, List, Details },
+    inject: ["isPcMaxVal"],
     props: ["initGameId"],
     data() {
         return {
@@ -82,6 +83,11 @@ export default {
             refreshKey: undefined,
             component: null,
         };
+    },
+    computed: {
+        isPcMax() {
+            return this.isPcMaxVal();
+        },
     },
     methods: {
         onComponentMounted() {

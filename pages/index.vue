@@ -38,6 +38,17 @@ export default {
     onShow() {
         this.updateScreenInfo()
     },
+    mounted() {
+        this.updateScreenInfo()
+        if (typeof window !== "undefined") {
+            window.addEventListener("resize", this.updateScreenInfo)
+        }
+    },
+    beforeDestroy() {
+        if (typeof window !== "undefined") {
+            window.removeEventListener("resize", this.updateScreenInfo)
+        }
+    },
     methods: {
         updateScreenInfo() {
             const info = uni.getSystemInfoSync()
@@ -159,11 +170,7 @@ export default {
         }
     }
 
-    ::v-deep(.vertical-text .swiper-container-vertical) {
-        height: 30px;
-    }
-
-    ::v-deep(.vertical-text .swiper-slide) {
+    .vertical-text-content {
         height: 30px;
         line-height: 30px;
     }
@@ -245,7 +252,7 @@ export default {
     .footer-data-title {
         height: 70px !important;
         line-height: 70px !important;
-        font-size: 26px !important;
+        font-size: 16px !important;
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="header" :class="{ [`${config.name}-header`]: true }">
+    <div class="header" :class="{ [`${config.name}-header`]: true, 'header-pc': isPcMax }">
         <img class="header-img header-left-img" src="@/assets/svg/back.svg" @click="closeWebview" />
 
         <div class="header-title">
@@ -18,10 +18,16 @@ import { getNickname } from "@/api/game.js";
 
 export default {
     name: "Header",
+    inject: ["isPcMaxVal"],
     props: {
         config: {
             type: Object,
             default: () => { },
+        },
+    },
+    computed: {
+        isPcMax() {
+            return this.isPcMaxVal();
         },
     },
     data() {

@@ -1,5 +1,11 @@
 <template>
-    <van-tabbar v-model="currentActive" class="tabbar" @change="changeTabbar" :border="false">
+    <van-tabbar
+        v-model="currentActive"
+        class="tabbar"
+        :class="{ 'tabbar-pc': isPcMax }"
+        @change="changeTabbar"
+        :border="false"
+    >
         <van-tabbar-item @click="handleTabClick">
             <template #icon="props">
                 <img :src="tab4" :class="{ active: props.active }" />
@@ -17,6 +23,7 @@ import tab4 from "@/assets/svg/tab4.svg";
 
 export default {
     name: "Tabbar",
+    inject: ["isPcMaxVal"],
     props: {
         value: {
             type: [Number, String],
@@ -25,6 +32,11 @@ export default {
         config: {
             type: Object,
             default: () => { },
+        },
+    },
+    computed: {
+        isPcMax() {
+            return this.isPcMaxVal();
         },
     },
     data() {

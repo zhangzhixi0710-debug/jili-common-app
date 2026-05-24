@@ -1,5 +1,5 @@
 <template>
-    <div class="container list-content">
+    <div class="container list-content" :class="{ 'list-content-pc': isPcMax }">
         <div class="banner-swiper">
             <swiper
                 class="banner-swiper-inner"
@@ -99,7 +99,7 @@ export default {
             finished: false,
             allData: [],
             page: 1,
-            pageSize: 24,
+            pageSize: 20,
             loadSize: 12,
             lang: "en-US",
             specialLang: "vi-VN",
@@ -151,7 +151,16 @@ export default {
     },
     watch: {
         isPcMax: {
-            handler() {},
+            handler(val) {
+                console.log(val, '2222222222')
+                if (val) {
+                    this.pageSize = 20
+                } else {
+                    this.pageSize = 40
+                }
+
+                this.initData()
+            },
             immediate: true,
         },
     },
