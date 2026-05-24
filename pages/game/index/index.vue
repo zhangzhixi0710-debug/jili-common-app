@@ -8,16 +8,20 @@
             <div class="text-main">
                 <div class="vertical-text">
                     <swiper
-                        ref="mySwiper"
                         v-if="messages.length"
-                        :options="swiperOptionText"
                         class="vertical-swiper"
+                        :vertical="true"
+                        :autoplay="true"
+                        :interval="4000"
+                        :duration="300"
+                        :circular="true"
+                        :disable-touch="true"
                     >
-                        <swiper-slide v-for="(item, index) in messages" :key="index">
+                        <swiper-item v-for="(item, index) in messages" :key="index">
                             <div class="vertical-text-content">
                                 <div class="notice-item">{{ item }}</div>
                             </div>
-                        </swiper-slide>
+                        </swiper-item>
                     </swiper>
                 </div>
             </div>
@@ -66,12 +70,6 @@ export default {
             },
             lang: getLanguageValue(),
             active: 0,
-            swiperOptionText: {
-                direction: "vertical",
-                autoplay: { delay: 4000, disableOnInteraction: false },
-                loop: true,
-                allowTouchMove: false,
-            },
             messages: [
                 this.$t('message.marquee_1'),
                 this.$t('message.marquee_2'),
@@ -85,20 +83,9 @@ export default {
             component: null,
         };
     },
-    mounted() {
-        this.initData();
-    },
     methods: {
         onComponentMounted() {
             this.isLoading = false;
-        },
-        async initData() {
-            this.$nextTick(() => {
-                if (this.$refs.mySwiper?.$swiper) {
-                    this.$refs.mySwiper.$swiper.loopDestroy();
-                    this.$refs.mySwiper.$swiper.loopCreate();
-                }
-            });
         },
         handleListClick(item) {
             const gameId = item?.Id?.toLowerCase();
