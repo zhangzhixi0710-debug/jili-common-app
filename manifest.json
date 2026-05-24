@@ -1,5 +1,5 @@
 {
-  "name": "RuoYi-App",
+  "name": "jili-common-app",
   "appid": "__UNI__25A9D80",
   "description": "",
   "versionName": "1.2.0",
@@ -60,7 +60,7 @@
       "port": 8090,
       "https": false
     },
-    "title": "RuoYi-App",
+    "title": "Game",
     "router": {
       "mode": "hash",
       "base": "./"
