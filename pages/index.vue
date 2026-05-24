@@ -199,11 +199,11 @@ export default {
     }
 
     .footer-search {
-        margin: 0 20px !important;
+        margin: 0 10px !important;
     }
 
     .footer-data {
-        padding: 0 20px !important;
+        padding: 0 10px !important;
     }
 
     .search-title-div {
