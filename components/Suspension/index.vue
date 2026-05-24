@@ -135,7 +135,7 @@ export default {
     justify-content: center;
     opacity: 0;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     transition: opacity 0.2s ease, transform 0.2s ease;
 
     image {

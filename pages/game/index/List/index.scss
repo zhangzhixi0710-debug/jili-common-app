@@ -30,13 +30,13 @@
             color: #fff;
             display: flex;
             align-items: center;
-            font-size: 20px;
+            font-size: 16px;
         }
 
         .search-input::placeholder {
             color: #fff; /* 红色 */
             opacity: 1; /* 默认是 0.5，设为 1 避免半透明 */
-            font-size: 20px;
+            font-size: 16px;
         }
 
         .search-input:focus::placeholder {
@@ -69,14 +69,14 @@
             white-space: nowrap;
             color: #7e7e7e;
             padding-left: 12px;
-            font-size: 20px;
+            font-size: 16px;
             height: 40px;
             line-height: 40px;
             display: flex;
             align-items: center;
 
             span:last-child {
-                font-size: 20px;
+                font-size: 16px;
                 padding-left: 4px;
             }
         }
@@ -85,6 +85,7 @@
         .image-grid {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         ::v-deep(.van-list__loading) {
@@ -97,14 +98,8 @@
 
         .image-item {
             width: calc((100% - 30px) / 4); /* 两个间距共40px */
-            margin-right: 10px;
             position: relative;
             min-height: 82px;
-            margin-bottom: 10px;
-        }
-
-        .image-item:nth-child(4n) {
-            margin-right: 0; /* 每行第3个不加右边距 */
         }
 
         .grid-img {
@@ -154,8 +149,8 @@
     .footer-data-title {
         color: #999;
         display: flex;
-        margin: 26px 0;
-        font-size: 30px;
+        margin: 16px 0;
+        font-size: 18px;
         font-family: "微軟正黑體", Helvetica, Arial, PingFangTC-Light, STHeitiTC-Light,
             "Microsoft JhengHei", sans-serif;
         font-weight: 700;

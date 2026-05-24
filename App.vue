@@ -67,13 +67,13 @@ uni-input.search-input input {
   box-shadow: none !important;
   background: #24263a !important;
   color: #fff !important;
-  font-size: 20px !important;
+  font-size: 14px !important;
 }
 
 uni-input.search-input .input-placeholder,
 uni-input.search-input .uni-input-placeholder {
   color: #fff !important;
-  font-size: 20px !important;
+  font-size: 14px !important;
   line-height: 40px !important;
   z-index: 1;
 }
