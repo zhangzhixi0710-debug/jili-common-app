@@ -152,7 +152,6 @@ export default {
     watch: {
         isPcMax: {
             handler(val) {
-                console.log(val, '2222222222')
                 if (val) {
                     this.pageSize = 20
                 } else {
