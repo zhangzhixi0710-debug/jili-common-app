@@ -75,6 +75,7 @@ uni-input.search-input .uni-input-placeholder {
   color: #fff !important;
   font-size: 20px !important;
   line-height: 40px !important;
+  z-index: 1;
 }
 
 uni-view.content {

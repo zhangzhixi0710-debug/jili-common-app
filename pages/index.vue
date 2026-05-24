@@ -231,8 +231,8 @@ export default {
     }
 
     .search-icon {
-        height: 40px !important;
-        line-height: 40px !important;
+        height: 33px !important;
+        line-height: 33px !important;
         border-radius: 7px !important;
         padding: 6px !important;
     }

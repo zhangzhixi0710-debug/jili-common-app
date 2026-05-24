@@ -1,20 +1,22 @@
 <template>
     <div class="container list-content">
         <div class="banner-swiper">
-            <swiper ref="mySwiper" :options="swiperOption">
-                <swiper-slide>
-                    <img src="@/assets/images/banner/banner_0.jpg" class="slide-img" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img src="@/assets/images/banner/banner_1.jpg" class="slide-img" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img src="@/assets/images/banner/banner_2.jpg" class="slide-img" />
-                </swiper-slide>
-                <div class="swiper-pagination" slot="pagination"></div>
-                <div class="swiper-button-prev" slot="button-prev"></div>
-                <div class="swiper-button-next" slot="button-next"></div>
+            <swiper
+                class="banner-swiper-inner"
+                :autoplay="true"
+                :interval="5000"
+                :duration="0"
+                :circular="true"
+                :disable-touch="true"
+                :current="bannerCurrent"
+                @change="onBannerChange"
+            >
+                <swiper-item v-for="(banner, index) in bannerImages" :key="index">
+                    <img :src="banner" class="slide-img" />
+                </swiper-item>
             </swiper>
+            <div class="swiper-button-prev" @click.stop="prevBanner"></div>
+            <div class="swiper-button-next" @click.stop="nextBanner"></div>
         </div>
         <div class="footer">
             <div class="footer-search">
@@ -85,19 +87,12 @@ export default {
     props: ["firstGame"],
     data() {
         return {
-            swiperOption: {
-                loop: true,
-                speed: 0,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                allowTouchMove: false,
-            },
+            bannerImages: [
+                require("@/assets/images/banner/banner_0.jpg"),
+                require("@/assets/images/banner/banner_1.jpg"),
+                require("@/assets/images/banner/banner_2.jpg"),
+            ],
+            bannerCurrent: 0,
             list: [],
             posthost: "",
             sac: "",
@@ -169,13 +164,16 @@ export default {
         this.lang = getLanguageValue();
     },
     methods: {
-        updateSwiper() {
-            const swiper = this.$refs.mySwiper?.swiper;
-            if (swiper) {
-                swiper.update();
-                swiper.loopCreate();
-                swiper.autoplay.start();
-            }
+        onBannerChange(event) {
+            this.bannerCurrent = event.detail.current;
+        },
+        prevBanner() {
+            const lastIndex = this.bannerImages.length - 1;
+            this.bannerCurrent = this.bannerCurrent === 0 ? lastIndex : this.bannerCurrent - 1;
+        },
+        nextBanner() {
+            this.bannerCurrent =
+                this.bannerCurrent === this.bannerImages.length - 1 ? 0 : this.bannerCurrent + 1;
         },
         // 搜索功能优化，支持中英文名模糊搜索
         onSearch() {

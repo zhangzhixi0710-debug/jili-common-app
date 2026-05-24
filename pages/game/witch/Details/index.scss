@@ -16,7 +16,6 @@
         .history-title {
             font-size: 20px;
             color: #fcc40d;
-            font-weight: 600;
         }
 
         span {
@@ -60,7 +59,6 @@
             span {
                 color: #7e7e7e;
                 font-size: 20px;
-                font-weight: 600;
             }
         }
 
@@ -80,7 +78,6 @@
             .history-search-item {
                 flex: 1;
                 font-size: 20px;
-                font-weight: 700;
                 color: #737373;
                 border: 1px solid rgba(115, 115, 115);
                 border-radius: 10px;
@@ -109,7 +106,6 @@
         margin-bottom: 20px;
         color: #fff;
         background: #fcc40d;
-        font-weight: 700;
         margin: 0 auto;
     }
 
@@ -280,7 +276,6 @@
 }
 ::v-deep .van-list__finished-text {
     font-size: 20px;
-    font-weight: 700;
     color: #737373;
     line-height: 40px;
     padding-bottom: 10px;
