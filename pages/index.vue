@@ -53,7 +53,7 @@ export default {
     height: 100%;
 
     .header {
-        height: 68px;
+        height: 60px;
 
         .header-left-img {
             width: 40px;
@@ -83,10 +83,10 @@ export default {
     }
 
     .main {
-        height: calc(100% - 68px);
+        height: calc(100% - 60px);
         width: calc(100% - 110px);
         margin-left: 110px;
-        margin-top: 125px;
+        margin-top: 115px;
     }
 
     .history-container {
@@ -195,7 +195,7 @@ export default {
     }
 
     .footer {
-        padding: 15px 0 20px 0 !important;
+        padding: 10px 0 !important;
     }
 
     .footer-search {
